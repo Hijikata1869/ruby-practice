@@ -1,9 +1,22 @@
-def some_method
-  <<~TEXT
-    ヒアドキュメント
-    ヒアドキュメント
-    ヒアドキュメント
-  TEXT
+status = 2
+
+case status
+when 0 # todo
+  'これからやります'
+when 1 # doing
+  '今やってます'
+when 2 # done
+  'もう終わりました'
 end
 
-puts some_method
+
+status = :done
+
+case status
+when :todo
+  'これからやります'
+when :doing
+  '今やってます'
+when :done
+  '終わりました'
+end
