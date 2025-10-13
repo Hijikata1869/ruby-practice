@@ -1,1 +1,6 @@
-r = /\d{3}-\d{4}/
+class User
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+end
