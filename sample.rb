@@ -1,6 +1,9 @@
-class User
-  attr_accessor :name
-  def initialize(name)
-    @name = name
+module Example
+  def example
+    str = self.to_s
   end
 end
+
+String.include Example
+
+p  'Hello, world!'.example
