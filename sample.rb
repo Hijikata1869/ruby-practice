@@ -1,13 +1,4 @@
-data = {
-  name: "Alison",
-  age: 22
-}
+status_message = `git status log.md`
 
-def example(arg)
-  case arg
-  in {age:}
-    puts age
-  end
-end
+p status_message
 
-example(data)
