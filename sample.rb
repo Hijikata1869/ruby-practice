@@ -1,4 +1,24 @@
-status_message = `git status log.md`
+# 差分が何も無い場合の戻り値は空文字
+#=> ""
+#
+# 差分がある時の戻り値例
+#=> p
+# "diff --git a/log.md b/log.md\nindex 9f1a614..569e6ca 100644\n--- a/log.md\n+++ b/log.md\n@@ -1,3 +1,9 @@\n+# 2025/10/31\n+自動化ツール作成\n+\n+# 2025/10/31\n+あああ\n+\n # 2025/10/31\n 自動化自動化自動化\n \n"
+# 
+#=> puts
+# diff --git a/log.md b/log.md
+# index 9f1a614..569e6ca 100644
+# --- a/log.md
+# +++ b/log.md
+# @@ -1,3 +1,9 @@
+# +# 2025/10/31
+# +自動化ツール作成
+# +
+# +# 2025/10/31
+# +あああ
+# +
+#  # 2025/10/31
+#  自動化自動化自動化
 
-p status_message
+
 
