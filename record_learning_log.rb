@@ -17,34 +17,31 @@ File.open('./log.md', 'w') do |f|
   f.puts new_file
 end
 
-`git add -A`
+`git add log.md`
 
 commit_content = `git diff HEAD log.md`
 
 confirmation_message = <<~TEXT
-  以下の内容でcommitします。よろしいですか？
   ----------------------------------------
   #{commit_content}
   ----------------------------------------
+  \nこの内容でcommitします。よろしいですか？\n\n
 TEXT
 
 is_commit = prompt.yes?("#{confirmation_message}")
 
 if is_commit
-  `git commit -m "updated learning_log.md`
-  puts 'commitしました'
+  `git commit -m "updated learning_log.md"`
+  puts "\ncommitしました\n\n"
 else
   puts 'commitできませんでした'
 end
 
-is_push = prompt.yes?("続けてpushしますか？")
+is_push = prompt.yes?("続けてpushしますか?")
 
 if is_push
   `git push origin main`
-  puts 'pushしました'
+  puts "\npushしました\n\n"
 else
   puts 'pushできませんでした'
 end
-
-
-
